@@ -1,0 +1,455 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+:root {
+  --blue: #1A56DB;
+  --orange: #EA5838;
+  --gold: #FFD700;
+  --dark: #0F172A;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+}
+
+/* Background with blur + zoom */
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("background_image.jpeg") center/cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark);
+  padding: 15px 50px;
+}
+
+/* Left Logo + Title */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+}
+
+.title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title p {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+/* Center Nav Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--gold);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Right: Moon Logo */
+.moon img {
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.moon img:hover {
+  box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.7);
+  transform: scale(1.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Event Box (Right side of page) */
+.event-box {
+  width: 600px;
+  background: #000000; /* pure black background */
+  color: var(--white);
+  padding: 25px;
+  border-radius: 20px; /* smooth curved edges */
+  position: absolute;
+  right: 40px;
+  top: 120px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border-right: 5px solid #FFD700; /* Pure yellow right edge */
+}
+
+/* Event Heading */
+.event-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Location & Date */
+.event-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.event-info .icon {
+  margin-right: 6px;
+}
+
+/* Event Images in single line */
+.event-image {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.event-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #FFD700; /* yellow border for images */
+  transition: transform 0.3s ease;
+}
+
+.event-image img:hover {
+  transform: scale(1.05);
+}
+
+/* College Info */
+.college-info {
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+.college-info p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffffff; /* pure white text */
+}
+
+/* Department Info */
+.department p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* Left Side Hero Section */
+.hero-left {
+  position: absolute;
+  left: 60px;   /* stick to left */
+  top: 150px;
+  width: 500px;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* Department Heading */
+/* Department heading (white only) */
+.dept-heading {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;   /* pure white */
+  margin-bottom: 14px;
+}
+
+/* Main title block with sharp yellow line */
+.main-title-block {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+/* Thick yellow line through middle */
+.main-title-block::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 8px;                 /* thickness of line */
+  background: var(--gold);     /* sharp yellow line */
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 40px; /* attractive spacing */
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.time-box {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid #FFD700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-box span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.time-box p {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #ffffff;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Register Button (Red) */
+.btn.register {
+  background: #EA5838; /* red-orange */
+  color: #ffffff;
+}
+
+.btn.register:hover {
+  background: #c94428;
+}
+
+/* Schedule Button (Transparent) */
+.btn.schedule {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn.schedule:hover {
+  background: rgba(255,255,255,0.1);
+}
+/* Main title with sharp yellow lines */
+.main-title-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;       /* spacing between lines and text */
+  margin-bottom: 20px;
+}
+
+.main-title-line span {
+  flex: 1;
+  height: 4px;
+  background: var(--gold); /* yellow sharp line */
+  border-radius: 2px;
+}
+
+.main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold);  /* text in yellow */
+  white-space: nowrap;
+}
+/* Department Info */
+.department p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold); /* yellow */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* Hover effect for countdown circles */
+.time-box {
+  transition: all 0.3s ease;
+}
+
+#days:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* red glow */
+}
+
+
+#hours:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* yellow glow */
+}
+
+#minutes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* aqua glow */
+}
+
+#seconds:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); /* green glow */
+}
+
+/* Buttons Hover Effects */
+.btn.register {
+  background:#EA5838;
+  color:#fff;
+  border:2px solid transparent;
+  transition: all 0.3s ease;
+}
+.btn.register:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(234, 88, 56, 0.8);
+}
+
+.btn.schedule {
+  background:transparent;
+  color:#fff;
+  border:2px solid rgba(255,255,255,0.85);
+  transition: all 0.3s ease;
+}
+.btn.schedule:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+.time-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent; /* fully transparent background */
+  border: 3px solid #444;  /* neutral border */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.time-box span {
+  font-size: 28px;      /* bigger numbers */
+  font-weight: 900;     /* extra bold */
+}
+
+/* Labels remain white */
+.time-box p {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+/* Individual number colors */
+#days   { color: red; }
+#hours  { color: #FFD700; }  /* yellow */
+#minutes{ color: aqua; }
+#seconds{ color: limegreen; }
+
+/* Hover Glow Matches Number Colors */
+#days:hover {
+  transform: scale(1.1);
+  border-color: red;
+  box-shadow: 0 0 18px red;
+}
+#hours:hover {
+  transform: scale(1.1);
+  border-color: #FFD700;
+  box-shadow: 0 0 18px #FFD700;
+}
+#minutes:hover {
+  transform: scale(1.1);
+  border-color: aqua;
+  box-shadow: 0 0 18px aqua;
+}
+#seconds:hover {
+  transform: scale(1.1);
+  border-color: limegreen;
+  box-shadow: 0 0 18px limegreen;
+}
