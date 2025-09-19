@@ -50,6 +50,7 @@ body {
 .logo {
   width: 55px;
   height: 55px;
+  border-radius:50px;
 }
 
 .title h1 {
@@ -453,3 +454,4 @@ body {
   border-color: limegreen;
   box-shadow: 0 0 18px limegreen;
 }
+
